@@ -5,14 +5,13 @@
 <%= form_tag("sms/send", method: "post") do %>
   <%= label_tag(:q, "Phone number:") %>
     <%= telephone_field(:user, :phone) %><br/>
-     <%= label_tag(:w, "Message:") %>
-  <%= text_field_tag(:w) %><br/>
+     <%= label_tag(:m, "Message:") %>
+  <%= text_field_tag(:m) %><br/>
  <%= submit_tag("Send") %>
   
   
-
-  
 <% end %>
+
 
 <%= form_tag("/sms/send", method: "post") do %>
 <!-- add form elements here -->
