@@ -5,10 +5,10 @@ class PagesController < ApplicationController
   def sms
     require 'twilio-ruby'
 
+require 'figaro'
 
-
-account_sid = "AC18a24843ad56becc85043032c3efec7d" 
-auth_token = "e72186683c4de8be4a55f7462fdd1f9e"
+account_sid = ENV["account_sid"]
+auth_token = ENV["auth_token"]
 
   @client = Twilio::REST::Client.new account_sid, auth_token 
   message = @client.account.messages.create(:body => params[:m], 
