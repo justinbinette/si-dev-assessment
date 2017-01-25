@@ -12,7 +12,7 @@ auth_token = "e72186683c4de8be4a55f7462fdd1f9e"
 
   @client = Twilio::REST::Client.new account_sid, auth_token 
   message = @client.account.messages.create(:body => params[:m], 
-    :to => "params[:phone]",   
+    :to => params[:user][:phone],   
     :from => "9787889443")
 puts message.sid
 
